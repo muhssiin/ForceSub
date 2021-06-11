@@ -119,7 +119,8 @@ async def mute_on_msg(event):
         except Exception as e:
             print(str(e))
             return
-        await event.reply(f"Hey {nm}, seems like you haven't joined our channel. Please join @{channel} and then press the button below to unmute yourself!", buttons=[[Button.url("Channel", url=f"https://t.me/{channel}")], [Button.inline("UnMute Me", data=f"unmute_{event.sender_id}")]])
+        await event.reply(f"Hey {nm}, seems like you haven't joined our channel. Please join @{channel} and then press the button below to unmute yourself!
+ഹാലോ {nm}, നിങ്ങൾ ഞങ്ങളുടെ ചാനലിൽ ചേർന്നിട്ടില്ലെന്ന് തോന്നുന്നു.  @{channel} ൽ ചേരുക, തുടർന്ന് സ്വയം നിശബ്ദമാക്കുന്നതിന് ചുവടെയുള്ള ബട്ടൺ അമർത്തുക!", buttons=[[Button.url("Channel", url=f"https://t.me/{channel}")], [Button.inline("UnMute Me", data=f"unmute_{event.sender_id}")]])
 
 
 @BotzHub.on(events.callbackquery.CallbackQuery(data=re.compile(b"unmute_(.*)")))
@@ -140,12 +141,12 @@ async def _(event):
             butt = [Button.url("Channel", url=f"https://t.me/{channel}")]
             await event.edit(msg, buttons=butt)
     else:
-        await event.answer("You are an old member and can speak freely! This isn't for you!", cache_time=0, alert=True)
+        await event.answer("You are an old member and can speak freely! This isn't for you!നിങ്ങൾ ഒരു പഴയ അംഗമാണ്, സ്വതന്ത്രമായി സംസാരിക്കാൻ കഴിയും!ഇത് നിങ്ങൾക്കുള്ളതല്ല!", cache_time=0, alert=True)
 
 @BotzHub.on(events.NewMessage(pattern="/start"))
 async def strt(event):
-    await event.reply(f"Hi. I'm a force subscribe bot made specially for @{channel}!\n\nCheckout @BotzHub :)", buttons=[Button.url("Channel", url=f"https://t.me/{channel}"), Button.url("Repository", url="https://github.com/xditya/ForceSub")])
+    await event.reply(f"Hi. I'm a force subscribe bot made specially for @{channel}!\n\nCheckout  :)", buttons=[Button.url("Channel", url=f"https://t.me/{channel}"), Button.url("Repository", url="https://t.me/smplmcube/7")])
 
     
-print("ForceSub Bot has started.\nDo visit @BotzHub!")
+print("ForceSub Bot has started.\nDo visit @MCubeMediaOfficial!")
 BotzHub.run_until_disconnected()
